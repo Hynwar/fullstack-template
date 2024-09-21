@@ -22,13 +22,14 @@ jobs:
       - name: Install Dependencies
         working-directory: ./client
         run: npm install
-      - name: Run Linter
-        working-directory: ./client
-        run: npm run lint
-        continue-on-error: true
-      - name: Fix Lint Issues
-        working-directory: ./client
-        run: npm run lint:fix
       - name: Run Formatter
         working-directory: ./client
         run: npm run format
+      - name: Fix Lint Issues
+        working-directory: ./client
+        run: npm run lint:fix
+        continue-on-error: true
+      - name: Run Linter
+        working-directory: ./client
+        run: npm run lint
+      
